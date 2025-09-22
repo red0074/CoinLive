@@ -39,6 +39,7 @@ const MarketHighlights = () => {
         setFetchState(FETCH_STATE.FAILURE);
       }
     };
+
     fetchData();
   }, []);
 
