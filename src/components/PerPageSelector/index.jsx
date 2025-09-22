@@ -1,5 +1,5 @@
 import "./index.css";
-const PerPageSelector = ({ value, onChange, options = [25, 50, 100] }) => {
+const PerPageSelector = ({ value, onChange, options = [10, 25, 50, 100] }) => {
   return (
     <div className="per-page-selector">
       <span>Show</span>
