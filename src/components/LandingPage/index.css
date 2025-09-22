@@ -1,0 +1,99 @@
+.landing-container {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom right, #3b82f6, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.landing-content {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  position: relative;
+}
+.logo-container {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 2rem;
+}
+.logo-circle {
+  width: 96px;
+  height: 96px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+.logo-bitcoin {
+  color: #3b82f6;
+  font-size: 2rem;
+  animation: spin 2s linear infinite;
+}
+.logo-pulse {
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: ping 2s infinite;
+  opacity: 0.3;
+}
+.logo-pulse.delay {
+  animation-delay: 0.5s;
+  opacity: 0.2;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+.landing-title h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.landing-title p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+.landing-progress {
+  margin-top: 2rem;
+}
+.progress-bar {
+  width: 80%;
+  max-width: 400px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0.5rem auto;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: white;
+  width: 0%;
+  border-radius: 4px;
+  transition: width 0.1s ease-out;
+}

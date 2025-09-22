@@ -1,0 +1,24 @@
+.coins-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.coins-table th,
+.coins-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.coins-table th {
+  background-color: #f3f3f3;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.coins-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+.coins-table tbody tr:hover {
+  background-color: #f0f8ff;
+}
