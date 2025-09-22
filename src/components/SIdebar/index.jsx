@@ -40,7 +40,7 @@ const Sidebar = () => {
                 `menu-item ${isActive ? "active" : ""}`
               }
             >
-              <Icon size={20} />
+              <Icon size={30} />
               <div>
                 <p>{item.label}</p>
                 <p className="description">{item.description}</p>
