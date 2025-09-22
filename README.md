@@ -1,12 +1,62 @@
-# React + Vite
+<h1 align="center" id="title">crypto tracker</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p id="description">A responsive cryptocurrency market dashboard built with React Vite Tailwind CSS fetching live coin data from CoinGecko.</p>
 
-Currently, two official plugins are available:
+<h2>Project Screenshots:</h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="https://res.cloudinary.com/dnvczouzo/image/upload/v1758555300/Screenshot_From_2025-09-22_21-04-30_kj3i9k.png" alt="project-screenshot" width="800" height="400/">
 
-## Expanding the ESLint configuration
+<img src="https://res.cloudinary.com/dnvczouzo/image/upload/v1758555320/Screenshot_From_2025-09-22_21-05-06_b4osb2.png" alt="project-screenshot" width="800" height="400/">
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img src="https://res.cloudinary.com/dnvczouzo/image/upload/v1758555332/Screenshot_From_2025-09-22_21-05-24_mor3kp.png" alt="project-screenshot" width="800" height="400/">
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   Coins Table: Rank Name + Symbol Icon Price 24h change (abs & %) Market Cap 24h Volume
+*   Search & Filter: By name symbol price market cap volume performance
+*   Pagination & Per Page Selection
+*   Market Highlights: Top gainers top losers trending coins highest volume
+*   Modal Coin Details on row click
+*   Responsive Design using Tailwind CSS
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone repository:</p>
+
+```
+git clone https://github.com/red0074/CoinLive.git
+```
+
+<p>2. Move into Project Folder</p>
+
+```
+cd CoinLive
+```
+
+<p>3. Install dependencies:</p>
+
+```
+npm install
+```
+
+<p>4. Start development server:</p>
+
+```
+npm run dev
+```
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   Frontend: React 19 Vite Tailwind CSS.
+*   Routing: React Router DOM
+*   UI: Lucide-react icons
+*   State Management: React hooks (useState useEffect)
+*   Proxy/API Handling: Vite dev server proxy
