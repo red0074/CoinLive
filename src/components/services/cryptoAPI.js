@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_COINGECKO_API_URL || "/api";
+const BASE_URL = import.meta.env.VITE_COINGECKO_API_URL;
 
 export async function fetchCoins(page = 1, perPage = 100) {
   try {
