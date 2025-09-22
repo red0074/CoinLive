@@ -2,6 +2,10 @@
 
 <p id="description">A responsive cryptocurrency market dashboard built with React Vite Tailwind CSS fetching live coin data from CoinGecko.</p>
 
+<h2>🚀 Demo</h2>
+
+[https://drive.google.com/file/d/1hLSCL9raAy8S3BngepKPvLDJSuHG9vwd/view?usp=sharing](https://drive.google.com/file/d/1hLSCL9raAy8S3BngepKPvLDJSuHG9vwd/view?usp=sharing)
+
 <h2>Project Screenshots:</h2>
 
 <img src="https://res.cloudinary.com/dnvczouzo/image/upload/v1758555300/Screenshot_From_2025-09-22_21-04-30_kj3i9k.png" alt="project-screenshot" width="800" height="400/">
