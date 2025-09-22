@@ -13,6 +13,8 @@ const FETCH_STATE = {
   FAILURE: "failure",
 };
 
+const BASE_URL = import.meta.env.VITE_COINGECKO_API_URL;
+
 const CoinsPage = () => {
   const [coins, setCoins] = useState([]);
   const [fetchState, setFetchState] = useState(FETCH_STATE.INITIAL);
@@ -34,7 +36,7 @@ const CoinsPage = () => {
       setFetchState(FETCH_STATE.LOADING);
       try {
         const res = await fetch(
-          `/api/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`
+          `${BASE_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`
         );
         const data = await res.json();
         if (!Array.isArray(data)) throw new Error("Invalid API response");

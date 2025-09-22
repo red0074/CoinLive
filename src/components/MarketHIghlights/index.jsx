@@ -9,6 +9,8 @@ const FETCH_STATE = {
   FAILURE: "failure",
 };
 
+const BASE_URL = import.meta.env.VITE_COINGECKO_API_URL;
+
 const MarketHighlights = () => {
   const [coins, setCoins] = useState([]);
   const [trendingCoins, setTrendingCoins] = useState([]);
@@ -20,7 +22,7 @@ const MarketHighlights = () => {
       try {
         const [coinsRes, trendingRes] = await Promise.all([
           fetch(
-            "/api/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+            `${BASE_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
           ),
           fetch("/api/api/v3/search/trending"),
         ]);
