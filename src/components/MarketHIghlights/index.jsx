@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { TrendingUp, TrendingDown, Star, Activity } from "lucide-react";
+import { fetchCoins, fetchTrendingCoins } from "../services/cryptoAPI";
 import "./index.css";
 
 const FETCH_STATE = {
@@ -17,24 +18,19 @@ const MarketHighlights = () => {
   const [fetchState, setFetchState] = useState(FETCH_STATE.INITIAL);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getHighlights = async () => {
       setFetchState(FETCH_STATE.LOADING);
       try {
-        const [coinsRes, trendingRes] = await Promise.all([
-          fetch(
-            `${BASE_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
-          ),
-          fetch("/api/api/v3/search/trending"),
+        const [coinsData, trendingData] = await Promise.all([
+          fetchCoins(1, 100),
+          fetchTrendingCoins(),
         ]);
-
-        const coinsData = await coinsRes.json();
-        const trendingData = await trendingRes.json();
 
         if (!Array.isArray(coinsData))
           throw new Error("Invalid coins response");
 
         setCoins(coinsData);
-        setTrendingCoins(trendingData.coins || []);
+        setTrendingCoins(trendingData || []);
         setFetchState(FETCH_STATE.SUCCESS);
       } catch (err) {
         console.error("Error fetching highlights:", err);
@@ -42,7 +38,7 @@ const MarketHighlights = () => {
       }
     };
 
-    fetchData();
+    getHighlights();
   }, []);
 
   const renderLoading = () => (
