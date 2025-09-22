@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CoinRow from "../CoinsRow";
 import "./index.css";
 
-const CoinsTable = ({ coins, loading }) => {
+const CoinsTable = ({ coins, loading, onRowClick }) => {
   const [sortConfig, setSortConfig] = useState({
     key: "market_cap_rank",
     direction: "asc",
@@ -65,7 +65,11 @@ const CoinsTable = ({ coins, loading }) => {
       </thead>
       <tbody>
         {sortedCoins.map((coin) => (
-          <CoinRow key={coin.id} coin={coin} />
+          <CoinRow
+            key={coin.id}
+            coin={coin}
+            onClick={() => onRowClick && onRowClick(coin)}
+          />
         ))}
       </tbody>
     </table>
