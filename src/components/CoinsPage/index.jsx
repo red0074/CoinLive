@@ -3,6 +3,7 @@ import CoinsTable from "../CoinsTable";
 import Pagination from "../Pagination";
 import PerPageSelector from "../PerPageSelector";
 import { applyFilters } from "../services/coinFilters";
+import CoinDetailModal from "../CoinDetailModal";
 import "./index.css";
 
 const FETCH_STATE = {
@@ -26,6 +27,7 @@ const CoinsPage = () => {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(25);
+  const [selectedCoin, setSelectedCoin] = useState(null);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -53,7 +55,6 @@ const CoinsPage = () => {
   const paginatedCoins = filteredCoins.slice(start, start + perPage);
   const totalPages = Math.ceil(filteredCoins.length / perPage);
 
-  // ---- Views ----
   const renderLoading = () => (
     <div className="loading-view text-center py-20">
       <p>Loading coins...</p>
@@ -84,7 +85,11 @@ const CoinsPage = () => {
         <PerPageSelector value={perPage} onChange={setPerPage} />
       </div>
 
-      <CoinsTable coins={paginatedCoins} loading={false} />
+      <CoinsTable
+        coins={paginatedCoins}
+        loading={false}
+        onRowClick={setSelectedCoin}
+      />
 
       <div className="mt-4 flex justify-center">
         <Pagination
@@ -93,6 +98,13 @@ const CoinsPage = () => {
           onPageChange={setCurrentPage}
         />
       </div>
+
+      {selectedCoin && (
+        <CoinDetailModal
+          coin={selectedCoin}
+          onClose={() => setSelectedCoin(null)}
+        />
+      )}
     </>
   );
 
